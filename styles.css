@@ -1,0 +1,793 @@
+@font-face {
+    font-family:"harrypotter";
+    src: url(fonts/HARRYP__.TTF);
+}
+
+@font-face {
+    font-family:"harrypotter2";
+    src: url(fonts/MagicOwlPersonalUse-WyO0O.otf);
+}
+
+@font-face {
+    font-family:"harrypotter3";
+    src: url(fonts/Kuda-PKx8d.ttf);
+}
+
+@font-face {
+    font-family:"harrypotter4";
+    src: url(fonts/MagicOwlPersonalUse-WyO0O.otf);
+}
+
+@font-face {
+    font-family:"harrypotter5";
+    src: url(fonts/WhiteDreamPersonalUseOnlyRegular-L37Rn.otf);
+}
+
+@font-face {
+  font-family:"harrypotter6";
+  src: url(fonts/RomanceFatalPrima-RAZV.ttf);
+}
+
+
+*{
+margin:0;
+}
+
+
+.images{
+    position:absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height:100vh;
+    overflow: hidden;
+    transform: translate(-50%,0%);
+    z-index: +3;
+}
+
+
+
+.castle{
+position:absolute;
+bottom: 0%;
+display: block;
+width: 190%;
+max-width: 1000px;
+left: 50%;
+object-fit: cover;
+transform: translate(-50%,0%);
+
+}
+
+.parallax{
+  /*morning*/
+  /* background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 41%, rgba(0, 10, 53, 1) 61%); */
+
+  /*evening*/
+  /* background:radial-gradient(circle at 100% 0%, rgba(255, 224, 153, 1) 7%, rgba(255, 183, 0, 1) 14%, rgba(130, 1, 36, 1) 100%); */
+
+  /*afternoon*/
+  /* background:radial-gradient(circle at 100% 0%, rgba(255, 209, 92, 1) 7%, rgba(255, 237, 131, 1) 10%, rgba(231, 255, 131, 1) 25%, rgba(68, 139, 163, 1) 63%, rgba(66, 121, 255, 1) 100%); */
+
+  /* background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 56%, rgba(0, 0, 0, 1) 100%); */
+  /* background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 41%, rgba(0, 0, 0, 1) 61%); */
+  /* background:radial-gradient(at 60% bottom, yellow,red);  */
+    position:absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#colback{
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background-image: url("images/chocolate3.webp");
+  background-position: center; */
+}
+
+.adjust{
+    position:absolute;
+    top:-30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    
+    /* background-color: brown; */
+    font-family:"harrypotter";
+    color: white;
+    font-size: 4em;
+    align-content:center;
+
+    /* animation-name:glow;
+    animation-duration:1.5s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+    transform: transale3d(0,0,0);  */
+
+}
+
+.adjust2{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    color: white;
+    z-index: +3;
+    font-family:'harrypotter4';
+    font-size: 4em;
+
+    /* animation-name:glow;
+    animation-duration:1.5s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+    transform: transale3d(0,0,0);  */
+
+}
+
+.black{
+    color: white;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    position: absolute;
+    z-index: +14;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'harrypotter3';
+    text-align: center;
+
+}
+
+.heart{
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background-color: rgb(202, 163, 22); */
+  /* z-index:+12; */
+  /* transform: transale3d(0,0,0); */
+
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("images/Old-Papyrus\ \(1\).webp");
+  background-size: cover;
+  padding: 10px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  z-index: +99;
+  text-align: center;
+  border-radius: 20px;
+  min-width: 100px;
+}
+
+.secret{
+  font-family:'harrypotter6';
+  color: #890707;
+}
+
+#input{
+  margin: 10px;
+  min-width:300px;
+  min-height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+#submit{
+  margin-top: 5px;
+  color: white;
+  border-radius: 20px;
+  min-width:80px;
+  min-height: 40px;
+  background-color: #890707;
+}
+
+@keyframes shakee {
+  0% { transform: translateX(0px); }
+  25% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0px); }
+}
+
+#heartstyle{
+  position:absolute;
+  color: rgb(255, 255, 255);
+  font-size: 10rem;
+  top:60%;
+  left: 50%;
+  transform: translate(-50%,0%);
+  transform: transale3d(0,0,0); 
+
+}
+
+@keyframes beat{
+	to { transform: scale(1.2); }
+}
+
+.heart2{
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background-color: rgb(202, 163, 22); */
+  z-index:+30;
+  opacity: 100%;
+  transform: transale3d(0,0,0); 
+
+}
+
+#heartstyle2{
+  display:block;
+  position:absolute;
+  color: rgb(214, 13, 13);
+  font-size: 10rem;
+  top:60%;
+  left: 50%;
+  transform: translate(-50%,0%);
+  transform: transale3d(0,0,0);
+  opacity: 0%; 
+
+}
+
+.snitch{
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+  /* z-index:+16; */
+  overflow: hidden;
+  z-index: +10;
+  opacity: 100%;
+}
+.ball{
+  position: absolute;
+  object-fit: cover;
+  overflow: hidden;
+  max-width: 100px;
+  width: 50%;
+  animation: ballfly 0.2s infinite ease-in-out;
+  animation-direction: alternate;
+  left: 100%;
+}
+
+@keyframes ballfly {
+  0% {
+    top: 20%;
+  }
+  100%{
+    top:30%;
+  }
+}
+
+.harryboy{
+  position: absolute;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  left:200%;
+  max-width: 800px;
+  top:15%;
+}
+
+.fogg{
+  position:absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -5;
+  opacity: 90%;
+
+}
+
+
+
+.fogimage{
+  position:absolute;
+  width: 600%;
+  /* left: -1000%; */
+
+  object-fit: cover;
+  bottom: 0%;
+  overflow: hidden;
+  animation: fogggg 19s infinite linear;
+
+}
+
+@keyframes fogggg {
+  0% {
+    opacity: 70%;
+    left:0%;
+  }
+  50%{
+    opacity: 0%;
+    left:-100%;
+  }
+  100%{
+    opacity: 70%;
+    left:0%;
+  }
+}
+
+.fogimage2{
+  position:absolute;
+  width: 600%;
+  /* left: -1000%; */
+
+  object-fit: cover;
+  bottom: 0%;
+  overflow: hidden;
+  animation: foggg2 9s infinite linear;
+}
+
+@keyframes foggg2 {
+  0% {
+    opacity: 0%;
+    right:0%;
+  }
+  50%{
+    opacity: 70%;
+    right:-50%;
+  }
+  100%{
+    opacity: 0%;
+    right:0%;
+  }
+}
+
+  
+  /* @keyframes glow{
+    from{text-shadow:0px 0px 2px #fff,0px 0px 2px #ffffff;}
+    to{text-shadow:0px 0px 25px #fff,0px 0px 25px #ffffff;}
+  } */
+
+
+/*stars*/
+
+
+.main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    /* box-shadow: -42vw -4vh 0px 0px #fff,25vw -41vh 0px 0px #fff,-20vw 49vh 0px 1px #fff,5vw 40vh 1px 1px #fff,29vw 19vh 1px 0px #fff,-44vw -13vh 0px 0px #fff,46vw 41vh 0px 1px #fff,-3vw -45vh 0px 1px #fff,47vw 35vh 1px 0px #fff,12vw -8vh 1px 0px #fff,-34vw 48vh 1px 1px #fff,32vw 26vh 1px 1px #fff,32vw -41vh 1px 1px #fff,0vw 37vh 1px 1px #fff,34vw -26vh 1px 0px #fff,-14vw -49vh 1px 0px #fff,-12vw 45vh 0px 1px #fff,-44vw -33vh 0px 1px #fff,-13vw 41vh 0px 0px #fff,-36vw -11vh 0px 1px #fff,-23vw -24vh 1px 0px #fff,-38vw -27vh 0px 1px #fff,16vw -19vh 0px 0px #fff,28vw 33vh 1px 0px #fff,-49vw -4vh 0px 0px #fff,16vw 32vh 0px 1px #fff,36vw -18vh 1px 0px #fff,-25vw -30vh 1px 0px #fff,-23vw 24vh 0px 1px #fff,-2vw -35vh 1px 1px #fff,-25vw 9vh 0px 0px #fff,-15vw -34vh 0px 0px #fff,-8vw -19vh 1px 0px #fff,-20vw -20vh 1px 1px #fff,42vw 50vh 0px 1px #fff,-32vw 10vh 1px 0px #fff,-23vw -17vh 0px 0px #fff,44vw 15vh 1px 0px #fff,-40vw 33vh 1px 1px #fff,-43vw 8vh 0px 0px #fff,-48vw -15vh 1px 1px #fff,-24vw 17vh 0px 0px #fff,-31vw 50vh 1px 0px #fff,36vw -38vh 0px 1px #fff,-7vw 48vh 0px 0px #fff,15vw -32vh 0px 0px #fff,29vw -41vh 0px 0px #fff,2vw 37vh 1px 0px #fff,7vw -40vh 1px 1px #fff,15vw 18vh 0px 0px #fff,25vw -13vh 1px 1px #fff,-46vw -12vh 1px 1px #fff,-18vw 22vh 0px 0px #fff,23vw -9vh 1px 0px #fff,50vw 12vh 0px 1px #fff,45vw 2vh 0px 0px #fff,14vw -48vh 1px 0px #fff,23vw 43vh 0px 1px #fff,-40vw 16vh 1px 1px #fff,20vw -31vh 0px 1px #fff,-17vw 44vh 1px 1px #fff,18vw -45vh 0px 0px #fff,33vw -6vh 0px 0px #fff,0vw 7vh 0px 1px #fff,-10vw -18vh 0px 1px #fff,-19vw 5vh 1px 0px #fff,1vw 42vh 0px 0px #fff,22vw 48vh 0px 1px #fff,39vw -8vh 1px 1px #fff,-6vw -42vh 1px 0px #fff,-47vw 34vh 0px 0px #fff,-46vw 19vh 0px 1px #fff,-12vw -32vh 0px 0px #fff,-45vw -38vh 0px 1px #fff,-28vw 18vh 1px 0px #fff,-38vw -46vh 1px 1px #fff,49vw -6vh 1px 1px #fff,-28vw 18vh 1px 1px #fff,10vw -24vh 0px 1px #fff,-5vw -11vh 1px 1px #fff,33vw -8vh 1px 0px #fff,-16vw 17vh 0px 0px #fff,18vw 27vh 0px 1px #fff,-8vw -10vh 1px 1px #fff; */
+  
+  /* stars were too big with the layers above but left the code in case no one cares  -- as in, if noone's just that  one other loner who actually cares    */
+  
+  -webkit-box-shadow: 24vw 9vh 1px 0px #fff,12vw -24vh 0px 1px #fff,-45vw -22vh 0px 0px #fff,-37vw -40vh 0px 1px #fff,29vw 19vh 0px 1px #fff,4vw -8vh 0px 1px #fff,-5vw 21vh 1px 1px #fff,-27vw 26vh 1px 1px #fff,-47vw -3vh 1px 1px #fff,-28vw -30vh 0px 1px #fff,-43vw -27vh 0px 1px #fff,4vw 22vh 1px 1px #fff,36vw 23vh 0px 0px #fff,-21vw 24vh 1px 1px #fff,-16vw 2vh 1px 0px #fff,-16vw -6vh 0px 0px #fff,5vw 26vh 0px 0px #fff,-34vw 41vh 0px 0px #fff,1vw 42vh 1px 1px #fff,11vw -13vh 1px 1px #fff,48vw -8vh 1px 0px #fff,22vw -15vh 0px 0px #fff,45vw 49vh 0px 0px #fff,43vw -27vh 1px 1px #fff,20vw -2vh 0px 0px #fff,8vw 22vh 0px 1px #fff,39vw 48vh 1px 1px #fff,-21vw -11vh 0px 1px #fff,-40vw 45vh 0px 1px #fff,11vw -30vh 1px 0px #fff,26vw 30vh 1px 0px #fff,45vw -29vh 0px 1px #fff,-2vw 18vh 0px 0px #fff,-29vw -45vh 1px 0px #fff,-7vw -27vh 1px 1px #fff,42vw 24vh 0px 0px #fff,45vw -48vh 1px 0px #fff,-36vw -18vh 0px 0px #fff,-44vw 13vh 0px 1px #fff,36vw 16vh 0px 1px #fff,40vw 24vh 0px 0px #fff,18vw 11vh 0px 0px #fff,-15vw -23vh 1px 0px #fff,-24vw 48vh 0px 1px #fff,27vw -45vh 1px 0px #fff,-2vw -24vh 0px 1px #fff,-15vw -28vh 0px 0px #fff,-43vw 13vh 1px 0px #fff,7vw 27vh 1px 0px #fff,47vw 5vh 0px 0px #fff,-45vw 15vh 1px 1px #fff,-5vw -28vh 0px 1px #fff,38vw 25vh 1px 1px #fff,-39vw -1vh 1px 0px #fff,5vw 0vh 1px 0px #fff,49vw 13vh 0px 0px #fff,48vw 10vh 0px 1px #fff,19vw -28vh 0px 0px #fff,4vw 7vh 0px 0px #fff,21vw 21vh 1px 1px #fff,-15vw -15vh 0px 1px #fff,-6vw -42vh 1px 0px #fff,-15vw 48vh 1px 1px #fff,-23vw 25vh 1px 1px #fff,-48vw 25vh 0px 1px #fff,-31vw -19vh 0px 1px #fff,4vw 37vh 1px 1px #fff,-43vw 28vh 0px 0px #fff,3vw -25vh 0px 1px #fff,-39vw 14vh 0px 1px #fff,-40vw 31vh 0px 1px #fff,35vw -36vh 1px 1px #fff,16vw 49vh 0px 0px #fff,6vw 39vh 0px 0px #fff,3vw -35vh 0px 1px #fff,-44vw -2vh 1px 0px #fff,-6vw 21vh 1px 0px #fff,48vw 9vh 1px 1px #fff,-43vw 30vh 1px 1px #fff,29vw -12vh 1px 1px #fff,-48vw 13vh 1px 0px #fff,-42vw 32vh 1px 1px #fff,34vw 15vh 1px 1px #fff,29vw -37vh 1px 1px #fff,28vw 2vh 0px 0px #fff;
+  box-shadow: 24vw 9vh 1px 0px #fff,12vw -24vh 0px 1px #fff,-45vw -22vh 0px 0px #fff,-37vw -40vh 0px 1px #fff,29vw 19vh 0px 1px #fff,4vw -8vh 0px 1px #fff,-5vw 21vh 1px 1px #fff,-27vw 26vh 1px 1px #fff,-47vw -3vh 1px 1px #fff,-28vw -30vh 0px 1px #fff,-43vw -27vh 0px 1px #fff,4vw 22vh 1px 1px #fff,36vw 23vh 0px 0px #fff,-21vw 24vh 1px 1px #fff,-16vw 2vh 1px 0px #fff,-16vw -6vh 0px 0px #fff,5vw 26vh 0px 0px #fff,-34vw 41vh 0px 0px #fff,1vw 42vh 1px 1px #fff,11vw -13vh 1px 1px #fff,48vw -8vh 1px 0px #fff,22vw -15vh 0px 0px #fff,45vw 49vh 0px 0px #fff,43vw -27vh 1px 1px #fff,20vw -2vh 0px 0px #fff,8vw 22vh 0px 1px #fff,39vw 48vh 1px 1px #fff,-21vw -11vh 0px 1px #fff,-40vw 45vh 0px 1px #fff,11vw -30vh 1px 0px #fff,26vw 30vh 1px 0px #fff,45vw -29vh 0px 1px #fff,-2vw 18vh 0px 0px #fff,-29vw -45vh 1px 0px #fff,-7vw -27vh 1px 1px #fff,42vw 24vh 0px 0px #fff,45vw -48vh 1px 0px #fff,-36vw -18vh 0px 0px #fff,-44vw 13vh 0px 1px #fff,36vw 16vh 0px 1px #fff,40vw 24vh 0px 0px #fff,18vw 11vh 0px 0px #fff,-15vw -23vh 1px 0px #fff,-24vw 48vh 0px 1px #fff,27vw -45vh 1px 0px #fff,-2vw -24vh 0px 1px #fff,-15vw -28vh 0px 0px #fff,-43vw 13vh 1px 0px #fff,7vw 27vh 1px 0px #fff,47vw 5vh 0px 0px #fff,-45vw 15vh 1px 1px #fff,-5vw -28vh 0px 1px #fff,38vw 25vh 1px 1px #fff,-39vw -1vh 1px 0px #fff,5vw 0vh 1px 0px #fff,49vw 13vh 0px 0px #fff,48vw 10vh 0px 1px #fff,19vw -28vh 0px 0px #fff,4vw 7vh 0px 0px #fff,21vw 21vh 1px 1px #fff,-15vw -15vh 0px 1px #fff,-6vw -42vh 1px 0px #fff,-15vw 48vh 1px 1px #fff,-23vw 25vh 1px 1px #fff,-48vw 25vh 0px 1px #fff,-31vw -19vh 0px 1px #fff,4vw 37vh 1px 1px #fff,-43vw 28vh 0px 0px #fff,3vw -25vh 0px 1px #fff,-39vw 14vh 0px 1px #fff,-40vw 31vh 0px 1px #fff,35vw -36vh 1px 1px #fff,16vw 49vh 0px 0px #fff,6vw 39vh 0px 0px #fff,3vw -35vh 0px 1px #fff,-44vw -2vh 1px 0px #fff,-6vw 21vh 1px 0px #fff,48vw 9vh 1px 1px #fff,-43vw 30vh 1px 1px #fff,29vw -12vh 1px 1px #fff,-48vw 13vh 1px 0px #fff,-42vw 32vh 1px 1px #fff,34vw 15vh 1px 1px #fff,29vw -37vh 1px 1px #fff,28vw 2vh 0px 0px #fff;
+  animation: zoom 16s alternate infinite; 
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+        opacity: 80%;
+    }
+    100%{
+        transform: scale(1.5);
+        opacity: 100%;
+    }
+}
+
+
+/*scroll down*/
+
+.scroll-down
+{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.scroll-down span:nth-child(2)
+{
+    animation-delay: -0.2s;
+}
+.scroll-down span:nth-child(3)
+{
+    animation-delay: -0.4s;
+}
+.scroll-down span
+{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+@keyframes animate
+{
+    0%
+  {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%
+  {
+        opacity: 1;
+    }
+    100%
+  {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+
+
+
+/*clouds*/
+
+.container{
+    height:100vh;
+    width:100vw;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  }
+  @keyframes clouds-loop-1 {
+      to {
+        background-position: -1000px 0;
+      }
+    }
+    .clouds-1 {
+      background-image: url("https://s.cdpn.io/15514/clouds_2.png");
+      animation: clouds-loop-1 30s infinite linear;
+    }
+    
+    @keyframes clouds-loop-2 {
+      to {
+        background-position: -1000px 0;
+      }
+    }
+    .clouds-2 {
+      background-image: url("https://s.cdpn.io/15514/clouds_1.png");
+      animation: clouds-loop-2 25s infinite linear;
+    }
+    
+    @keyframes clouds-loop-3 {
+      to {
+        background-position: -1579px 0;
+      }
+    }
+    .clouds-3 {
+      background-image: url("https://s.cdpn.io/15514/clouds_3.png");
+      animation: clouds-loop-3 27s infinite linear;
+    }
+    .clouds {
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+      opacity: 0.4;
+      pointer-events: none;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+    }
+    
+    .clouds-1,
+    .clouds-2,
+    .clouds-3 {
+      background-repeat: repeat-x;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 500px;
+    }
+
+
+    /*fog*/
+
+    /* .containerr {
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom:0px;
+        width: 120%;
+        pointer-events: none;
+        
+        }
+        
+        .fog {
+        opacity: 100%;
+        min-width: 2000px;
+        position: relative;
+        animation-name: fog;
+        animation-duration: 5s; 
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        opacity: 50%;
+        }
+        
+        @keyframes fog {
+            from {right: 200px;}
+            to {right: 0px; }
+          } */
+
+
+
+          /*animated text*/
+
+          #helll{
+            display: flex;
+            justify-content: center;
+            border: 1px solid black;
+            width: 100vw;
+          }
+          
+          .letter {
+            font-size: 100px;
+            margin: 0 5px;
+            transform-origin: center;
+            transform: translateX(15px);
+          }
+          
+          #letter1{animation: spin 3s infinite 100ms linear, appear 2s;}
+          #letter2{animation: spin 3s infinite 225ms linear, appear 2s;}
+          #letter3{animation: spin 3s infinite 350ms linear, appear 2s;}
+          #letter4{animation: spin 3s infinite 475ms linear, appear 2s;}
+          #letter5{animation: spin 3s infinite 600ms linear, appear 2s;}
+          #letter6{animation: spin 3s infinite 725ms linear, appear 2s;}
+          @keyframes appear{
+            from{
+              opacity: 0;
+            }
+            to{
+              opacity: 1;
+            }
+          }
+          
+          @keyframes spin{
+            from {
+              transform: rotate(0deg) translateX(15px) rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg) translateX(15px) rotate(-360deg); 
+            }
+          }
+
+
+
+
+
+
+
+
+          #containert {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+
+            
+          }
+
+          #toggleBtn{
+            margin:10px;
+            background-color: transparent;
+            border-color: transparent;
+          }
+          .wandd{
+            width: 30px;
+            height: 30px;
+          }
+      
+          #slideout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            max-width: 200px;
+            height: 100%;
+            background: rgba(4, 4, 4, 0.9);
+            transition: left 0.5s ease-out;
+          }
+          .slidetitle{
+            color: white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            margin: 2px;
+          }
+
+          .button22{
+            font-family:'harrypotter6';
+            font-size: 30px;
+            width: 90%;
+            height: 50px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: #ffffff;
+          }
+          #linkbut{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+          }
+
+          #autotime{
+            background-color:#7CFC00;
+          }
+      
+          #slideout.open {
+            left: 0;
+          }
+
+          #closing{
+            display: none;
+            float: right;
+            width: 86%;
+            overflow: hidden;
+            height: 100vh;
+            background-color: transparent;
+            border-color: transparent;
+          }
+
+          #madewith{
+            margin-top: 12px;
+            font-size: 14px;
+          }
+
+
+
+
+
+          .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #242f3f;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+          }
+          .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 4px solid #Fff;
+            animation: loader 2s infinite ease;
+          }
+          .loader-inner {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            animation: loader-inner 2s infinite ease-in;
+          }
+          
+          @keyframes loader {
+            0% { transform: rotate(0deg);}
+            25% { transform: rotate(180deg);}
+            50% { transform: rotate(180deg);}
+            75% { transform: rotate(360deg);}
+            100% { transform: rotate(360deg);}
+          }
+          
+          @keyframes loader-inner {
+            0% { height: 0%;}
+            25% { height: 0%;}
+            50% { height: 100%;}
+            75% { height: 100%;}
+            100% { height: 0%;}
+          }
+
+          .funtxt{
+            color: white;
+            font-size: 23px;
+            margin-bottom: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+            font-style: italic;
+          }
+
+
+
+
+          /* hint part */
+
+          #open-modal{
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            height: 30px;
+            width: 70px;
+            border-radius: 15px;
+            background-color: rgba(100, 255, 103, 0.646);
+            color: rgb(28, 0, 0);
+          }
+
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+          }
+
+          #modal-text{
+            position:absolute;
+            font-size: 30px;
+            font-family:Arial, Helvetica, sans-serif;
+            top: 3%;
+            left: 50%;
+            transform: translate(-50%);
+            width: 100%;
+            
+          }
+      
+          .modal-content {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            height: 60%;
+            width: 80%;
+            left: 50%;
+            transform: translate(-50%,50%);
+            bottom: 50%;
+            border-radius: 20px;
+          }
+
+          .spacefor{
+            position: absolute;
+            left: 50%;
+            bottom: 15%;
+            transform: translate(-50%,50%);  
+          }
+
+          .sizebutt{
+            width: 70px;
+            height: 40px;
+            background-color: #6f290068;
+            border-radius: 15px;
+          }
+
+
+
+
+
+
+

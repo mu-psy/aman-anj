@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
+
+
+html, body
+{
+    height: 100%;
+}
+
+*{
+margin:0;
+}
+
+body{
+  background: url('http://www.webdesign.org/img_articles/19030/stagphoto1a.jpg');  
+  color: #3E0C10;
+  font-family: 'Walter Turncoat';
+  padding: 0px;
+  margin: 0px;
+  z-index: 9997;
+  
+}
+
+.container{
+  margin: 0px;
+  background: rgba(255,255,255,0.3);
+  text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 40px;
+  
+}
+
+.top-img{
+  background-image: url('https://40.media.tumblr.com/5446b47fff53aaac1669203cd1398c7a/tumblr_nyju1y4ldZ1togik8o1_250.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  align-self: center;
+}
+
+.mid-container{
+  padding: 20px 15% 20px 15%;
+  align-self: center;
+}
+
+#quote{
+  font-size: 32pt;
+  /* //font-weight: bold; */
+}
+
+#author{
+  font-size: 14pt;
+  font-weight: bold;
+  font-style: italic;
+  float: right;
+  margin-top: 20px;
+  /* //margin-left: 40%; */
+  margin-right: 20px;
+  
+}
+
+.btn{
+  margin-top: 20px;
+}
+
+.button{
+  color: white; 
+  font-size: 18pt;
+  background: #3E0C10;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+font-family: 'Walter Turncoat';  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:active{
+  color: #3E0C10;
+  background: transparent;
+  padding: 8px 13px;
+  border: 2px solid #3E0C10;
+}
+
+.meaningg{
+          position:fixed;
+          background-color: rgba(149, 81, 3, 0.98);
+          color: white;
+          padding: 10px;
+          left: 50%;
+          bottom: 50%;
+          transform: translate(-50%,50%);
+          font-size: 20px;
+          width: 70%;
+          text-align: justify;
+          border-radius: 8px;
+          box-shadow: 10px 10px 8px 1px #060606;
+          display: none;
+        }
+
+        #closebut{
+          position: absolute;
+          background-color: white;
+          font-size: 20px;
+          right: 0;
+          top: 0;
+          margin: 2px;
+          border-radius: 8px;
+    }
+
+    #closebut3{
+      position: fixed;
+      top: 0;
+      margin: 2%;
+      background-color:rgba(0,0,0,.5)
+    }
+
+    #blureff{
+      position: fixed;
+      top: 0;
+      backdrop-filter: blur(2px);
+      height:100vh;
+      width:100%;
+      display: none;
+    }
+
+
+
+
+    .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #242f3f;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+          .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 4px solid #Fff;
+            animation: loader 2s infinite ease;
+          }
+          .loader-inner {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            animation: loader-inner 2s infinite ease-in;
+          }
+          
+          @keyframes loader {
+            0% { transform: rotate(0deg);}
+            25% { transform: rotate(180deg);}
+            50% { transform: rotate(180deg);}
+            75% { transform: rotate(360deg);}
+            100% { transform: rotate(360deg);}
+          }
+          
+          @keyframes loader-inner {
+            0% { height: 0%;}
+            25% { height: 0%;}
+            50% { height: 100%;}
+            75% { height: 100%;}
+            100% { height: 0%;}
+          }
+
+          #madewith{
+            opacity: 85%;
+            margin-top: 40px;
+            font-size: 16px;
+          }
+
+          .funtxt{
+            color: white;
+            font-size: 23px;
+            margin-bottom: 40px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+            font-style: italic;
+          }
+
+
+    </style>
+</head>
+<body>
+    <div class="container" id="boxx">
+      <a href="index.html" class="button" id="closebut3">back</a>
+        <div class="top-img"></div>
+        <div class="mid-container">
+        <div id="quote" quotenum=""></div>
+        <div id="author"></div>
+        </div>
+        <div class="btn">
+          <a class="button" id="generate3" onclick="openbox()">meaning</a>
+          <a class="button" id="generate">Generate🪄</a>
+      
+        </div>
+        <div id="madewith">Made with ♡ by Sonu</div>
+        <div id="blureff" onclick="closebox()"></div>
+        <div class="meaningg" id="meann"><p>
+          <button id="closebut" onclick="closebox()">X</button><br><span id="mean">in the name of country nation of
+          the indian niaton when are we going to the the name of the th
+          inter when are the things when are we going to the things which
+          when we can be things which could be done whenever seen
+          there was things which or not available the
+          the indian niaton when are we going to the the name of the th
+          inter when are the things when are we going to the things which
+          when we can be things which could be done whenever seen
+          there was things which or not available the</span> 
+        </p>
+        </div>
+      </div>
+
+      <div class="loader-wrapper">
+        <div class="funtxt">Onn wait cheyy... load aavann <span style="font-style:normal;">😁</span></div>
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+
+      <script>
+        $(document).ready(function() {
+        getCurrentTweet();
+      
+        function generateQuote(num) {
+          var quotes = [
+["If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.","Sirius Black","This quote means that a person's true character can be revealed by observing how they treat those who are less powerful or have less status than themselves"],
+["We're all human, aren't we? Every human life is worth the same, and worth saving","Kingsley Shacklebolt","This quote highlights the idea that all human beings are equal and deserving of equal treatment, regardless of their differences"],
+["It does not do to dwell on dreams and forget to live","Albus Dumbledore","This quote is a reminder not to become too absorbed in our dreams and aspirations that we forget to live our lives in the present moment"],
+["Happiness can be found, even in the darkest of times, if one only remembers to turn on the light.","Albus Dumbledore","This quote suggests that even in difficult times, it is possible to find happiness if we actively seek it out and make an effort to focus on positive things"],
+["To the well-organized mind, death is but the next great adventure.","Albus Dumbledore","This quote indicates that death should not be feared, but rather embraced as the next step in a person's journey"],
+["Love as powerful as your mother's for you leaves its own mark... to have been loved so deeply, even though the person who loved us is gone, will give us some protection forever.","Albus Dumbledore","This quote speaks to the idea that the love a person experiences in their lifetime can leave a lasting impact, providing comfort and strength even after the person is no longer physically present"],
+["Don't let the muggles get you down.","Ron Weasley","This quote is a lighthearted way of saying don't let other people's negativity or ignorance affect you"],
+["We can't choose our fate, but we can choose others. Be careful in knowing that.","Albus Dumbledore","This quote suggests that while we may not have control over the events that happen to us in life, we do have control over the people we choose to surround ourselves with and the relationships we form"],
+["We've all got both light and dark inside us. What matters is the part we choose to act on. That's who we really are.","Sirius Black","This quote indicates that everyone has both good and bad tendencies within them, but what truly defines a person is the actions they choose to take and the behavior they exhibit"]
+["The ones that love us never really leave us.","Sirius Black","This quote suggests that the love and memories of people we have lost remain with us and continue to shape and influence us, even after they are gone"],
+["We've all got both light and dark inside us. What matters is the part we choose to act on. That's who we really are.","Sirius Black","This quote indicates that everyone has both good and bad tendencies within them, but what truly defines a person is the actions they choose to take and the behavior they exhibit"],
+["Wit beyond measure is a man's greatest treasure.","Luna Lovegood","This quote highlights the value of intelligence and cleverness, and suggests that these traits are more valuable than material wealth"],
+["Fear of a name only increases fear of the thing itself.","Hermione Granger","This quote suggests that avoiding or hiding from something that scares us only amplifies our fear, and that facing the thing directly and naming it is more empowering"],
+["We do not need magic to change the world, we carry all the power we need inside ourselves already.","J.K. Rowling","This quote is a motivational message encouraging individuals to recognize the power they possess within themselves to create positive change in the world"],
+["Let us step into the night and pursue that flighty temptress, adventure.","Albus Dumbledore","This quote encourages embracing new experiences and taking risks, despite the uncertainty and potential dangers they may bring"],
+["It is our choices... that show what we truly are, far more than our abilities.","Albus Dumbledore","This quote suggests that our actions and decisions, rather than our inherent abilities, reveal our true character and define who we are"],
+["The best of us sometimes eat our words.","Lupin","This quote acknowledges that everyone makes mistakes and sometimes says things they later regret, but that this is a normal part of the learning process"],
+["Differences of habit and language are nothing at all if our aims are identical and our hearts are open.","Albus Dumbledore","This quote suggests that differences in lifestyle, background, or language should not be barriers to friendship or cooperation, as long as people share common goals and values"],
+["There are all kinds of courage. It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.","Albus Dumbledore","This quote highlights that it takes courage to challenge the people close to us, whether to stand up for what is right or to express our feelings honestly"],
+["We must all face the choice between what is right and what is easy.","Albus Dumbledore","This quote suggests that making ethical and responsible decisions is often more difficult than taking the easy or convenient path, but is what separates the truly good from the merely mediocre"],
+["Don't worry. You're just as sane as I am.","Luna Lovegood","This quote suggests that it is okay to be different and have unique perspectives, and that there is no one definition of 'normal' or 'sane'"],
+["Indifference and neglect often do much more damage than outright dislike.","Albus Dumbledore","This quote highlights the harm that can be caused by ignoring or not caring about someone, rather than actively disliking them"],
+["Friendship is not about who you have known the longest. It's about who walked into your life, said “I'm here for you,” and proved it.","Unknown","This quote emphasizes the importance of the actions and support that define a true friend, rather than simply the length of time they have known you"],
+["Youth can not know how age thinks and feels. But old men are guilty if they forget what it was to be young.","Albus Dumbledore","This quote suggests that older individuals should be mindful of their experiences and perspectives, and remember what it was like to be young"],
+["We've all got both light and dark inside us. What matters is the part we choose to act on. That's who we really are.","Sirius Black","This quote highlights the idea that everyone has both good and bad qualities, and that it is our choices and behavior that define who we are"],
+["Children are our future, and we must do everything in our power to protect them.","Kingsley Shacklebolt","This quote stresses the importance of providing support and security for children, as they will shape the future"],
+["It's not what you have in your life, but who you have in your life that counts.","Unknown","This quote highlights the importance of having meaningful relationships and being surrounded by people you care about"],
+["Every family is different. And that's what makes each one special and unique.","Unknown","This quote suggests that the differences and quirks of each family are what make them special and should be celebrated"],
+["You can love someone so much…But you can never love people as much as you can miss them.","J.K. Rowling","This quote speaks to the intensity and depth of emotions that can be experienced when missing someone you love"],
+["It's not what you have, or who you are, or where you are, or what you are doing that makes you happy or unhappy. It is what you think about it.","Dale Carnegie","This quote highlights the idea that our thoughts and attitudes have a major impact on our happiness and well-being"],
+["The ones we love never truly leave us.","Fred Weasley","This quote highlights the idea that love can endure beyond death and that the memory of a loved one can continue to bring comfort and joy"],
+["Love is an ever-fixed mark that looks on tempests and is never shaken.","Albus Dumbledore","This quote suggests that true love is steadfast and unchanging, able to endure even the most difficult challenges"],
+["There is no magic greater than pure love.","J.K. Rowling","This quote emphasizes the immense power and strength of love, and its ability to surpass all other forms of magic or power"],
+["Love, it is said, can make you do things that you never thought possible.","Albus Dumbledore","This quote highlights the transformative power of love, and its ability to inspire individuals to achieve great things that they would have thought impossible"],
+["The truth. It is a beautiful and terrible thing, and must therefore be treated with great caution.","Albus Dumbledore","This quote highlights the idea that knowledge and truth can be both powerful and dangerous, and should be approached with caution and respect"],
+["It is our choices that show what we truly are, far more than our abilities.","Albus Dumbledore","This quote suggests that a person's true character is revealed by the choices they make, rather than their inherent abilities"],
+["It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.","Albus Dumbledore","This quote emphasizes the importance of standing up for what is right, even when it means challenging those closest to us"],
+["Fear of a name increases fear of the thing itself.","Albus Dumbledore","This quote suggests that ignorance and fear feed upon each other, and that confronting and facing our fears can help to reduce their power over us"],
+["Youth cannot know how age thinks and feels. But old men are guilty if they forget what it was to be young.","Albus Dumbledore","This quote highlights the idea that different generations often have difficulty understanding each other, and that it is important to strive to maintain empathy and understanding across generations"],
+["We do not need magic to change the world, we carry all the power we need inside ourselves already: we have the power to imagine better.","J.K. Rowling","This quote suggests that the power to create positive change lies within each of us, and that the imagination is a powerful tool for creating a better world"],
+["Understanding is the first step to acceptance, and only with acceptance can there be recovery.","Albus Dumbledore","This quote emphasizes the importance of understanding and acceptance in the healing process, and suggests that recovery from difficulties is only possible with a foundation of understanding and acceptance"],
+["The greatest glory in living lies not in never falling, but in rising every time we fall.","Nelson Mandela (cited in Harry Potter and the Goblet of Fire)","This quote highlights the importance of resilience and perseverance, and suggests that true success is not determined by never making mistakes, but by being able to pick oneself up and continue after falling"],
+["Dark and difficult times lie ahead. Soon we must all face the choice between what is right and what is easy.","Albus Dumbledore","This quote emphasizes the importance of making difficult and ethical choices, and suggests that the path of right and good is often more challenging than the path of ease and comfort"],
+["It is not our abilities that show what we truly are. It is our choices.","Albus Dumbledore","This quote highlights the idea that a person's character is revealed by the choices they make, rather than their inherent abilities and talents"],
+["I solemnly swear I am up to no good.","George Weasley","This quote is the incantation used by characters in the series to activate the Marauder's Map, a magical object that reveals the locations of people within Hogwarts School of Witchcraft and Wizardry. The phrase has become a popular meme and reference to the series"],
+["I have always wanted to use that spell. It is the coolest.","Fred Weasley","This quote, spoken by Fred Weasley, emphasizes his love of magic and excitement at using spells and incantations"],
+["It's leviOsa, not leviosAH.","Hermione Granger","This quote, spoken by Hermione Granger, emphasizes her attention to detail and her desire for accuracy, even in the pronunciation of spells"],
+["You're just as sane as I am.","Luna Lovegood","This quote, spoken by Luna Lovegood, playfully challenges the idea that sane and insane are well-defined categories, and suggests that everyone has their own unique perspectives and ways of seeing the world"],
+["I don't go looking for trouble. Trouble usually finds me.","Harry Potter","This quote, spoken by Harry Potter, highlights his tendency to find himself in dangerous and difficult situations, despite his best intentions"],
+["Don't let the muggles get you down.","Ron Weasley","This quote, spoken by Ron Weasley, encourages perseverance in the face of difficulties and challenges, and suggests that it is important to maintain a positive outlook even in difficult circumstances"],
+["I'm not going to be one of those people who dies because they didn't know when to give up.","Harry Potter","This quote, spoken by Harry Potter, highlights his determination and resilience, and suggests that knowing when to give up is a critical aspect of success and survival"],
+["If you want to know what a man's like, take a look at how he treats his inferiors, not his equals."," Sirius Black","This quote highlights the idea that a person's true character is revealed by observing how they treat those who are less powerful or have less status than themselves"],
+["Wit beyond measure is man's greatest treasure.","Luna Lovegood","This quote, spoken by Luna Lovegood, emphasizes the importance of wit and cleverness, and suggests that these traits are valuable and worth cultivating"],
+["I'm not going to be killed by a spiky little Psycho-Ward patient.","Draco Malfoy","This quote, spoken by Draco Malfoy, highlights his sarcastic wit and his tendency to make light of difficult or dangerous situations"],
+["I don't want to be hated by the people I love."," Harry Potter","This quote, spoken by Harry Potter, highlights his desire for love and acceptance, and his fear of rejection and alienation from those closest to him"],
+["We are only as strong as we are united, as weak as we are divided.","Albus Dumbledore","This quote emphasizes the importance of unity and solidarity in facing challenges and difficulties, and suggests that working together can lead to greater strength and success"],
+["To have been loved so deeply, even though the person who loved us is gone, will give us some protection forever.","Albus Dumbledore","This quote suggests that the love we receive and give, even if it is in the past, can have a lasting impact on us and offer comfort and support in the future"],
+["We do not need magic to change the world, we carry all the power we need inside ourselves already: we have the power to imagine better.","J.K. Rowling","This quote suggests that we have the ability to bring about positive change in the world through our imaginations and our actions"],
+["Love is a force more formidable than any other. It is invisible—it cannot be seen or measured, yet it is powerful enough to transform you in a moment, and offer you more joy than any material possession could.","Barbara De Angelis","This quote highlights the transformative power of love, and suggests that it has the ability to bring joy and happiness in a way that material possessions cannot"],
+["The greatest thing you'll ever learn is just to love and be loved in return."," Eden Ahbez","This quote suggests that love is the most important thing to learn, and that the greatest reward of love is to receive love in return"],
+["The best love is the kind that awakens the soul and makes us reach for more, that plants a fire in our hearts and brings peace to our minds. And that's what you've given me. That's what I'd hoped to give you forever.","Nicholas Sparks","This quote highlights the power of love to inspire, awaken, and bring peace and happiness"],
+["I'm not saying I'm going to change the world, but I guarantee that I will spark the brain that will change the world.","Unknown","This quote suggests that even small actions can have a significant impact and inspire change"],
+["Life is not the amount of breaths you take, but the moments that take your breath away.","Unknown","This quote highlights the idea that life is about the experiences and moments that are truly unforgettable"],
+["Happiness is not a destination, it's a journey. It's not something you pursue, it's something you create.","Unknown","This quote suggests that happiness is not something that can be found through external means, but must be created through one's own actions and attitudes"],
+["Life is too short to waste time on things that don't matter.","Unknown","This quote encourages the idea of focusing on what is truly important in life and not wasting time on trivial pursuits"],
+["Friendship is not just about being there for each other when you need someone, it's about being there for each other always.","Unknown","This quote highlights the idea that true friendship is a constant support and presence, not just a temporary solution"],
+["The people who matter most in our lives are the ones who never left our side.","Unknown","This quote emphasizes the importance of the people who have stuck with us through thick and thin"],
+["Life is about creating yourself, not finding yourself.","Unknown","This quote suggests that life is about actively shaping one's own identity and future, not just passively accepting it"],
+["Happiness is only real when shared.","Unknown","This quote highlights the idea that true happiness comes from sharing experiences and joy with others"],
+["The greatest joy in life is not just having someone to love, but having someone who loves you for who you are.","Remus Lupin","This quote emphasizes the happiness that comes from being loved for who you truly are, rather than just for superficial reasons"],
+["Love is like a spell, it requires patience, understanding, and trust to grow strong and last forever.","Fenrir Greyback","This quote highlights the idea that love is a process that requires effort and patience to grow and endure"],
+["The greatest adventure in life is not seeking treasure, but finding someone who makes life feel like a treasure.","Draco Malfoy","This quote suggests that the greatest joy in life is not material wealth, but finding someone who brings meaning and happiness to one's life"],
+["Never give up, for that is just the place and time that the tide will turn.","Unknown","This quote encourages perseverance and determination, reminding us that even if things seem hopeless, there's always a chance for things to turn around"],
+["It's not about the house we were born into, it's about the family we've created for ourselves.","Unknown","This quote emphasizes the importance of chosen family and the relationships we build and nurture, rather than the circumstances of our birth"],
+["We are only as strong as we are united, as weak as we are divided.","Unknown","This quote highlights the power of unity and teamwork, and the dangers of division and strife"],
+["Sometimes you have to be a bit odd to be number one.","Unknown","This quote encourages individuality and celebrating our quirks, reminding us that it's often the things that make us different that make us stand out and succeed"],
+["We can't all be someone, but everyone can be someone special.","Unknown","This quote promotes the idea that everyone has unique talents and abilities, and that it's important to focus on our own individual strengths and gifts"],
+["Knowledge will give you power, but character respect.","Unknown","This quote stresses the importance of personal integrity and ethics, reminding us that a good reputation and respect from others is more valuable than mere knowledge or intelligence"],
+["Bravery isn't the absence of fear, but the triumph over it.","Unknown","This quote defines bravery as overcoming our fears, rather than simply not feeling afraid, and encourages us to face our fears and overcome them"],
+["The future is something that everyone reaches at the rate of sixty minutes an hour, whatever he does, whoever he is.","Unknown","This quote reminds us that time passes for everyone, regardless of our actions or circumstances, and that we should make the most of the present and work towards a better future"],
+["The greatest power of all is the power to choose","Unknown","This quote highlights the importance of agency and the power of choice in shaping our lives and determining our destiny"],
+["Success is not the key to happiness. Happiness is the key to success","Unknown","This quote emphasizes the idea that happiness and fulfillment should be our ultimate goals, rather than external markers of success such as money or prestige"],
+["What’s life without a little risk?","Sirius Black","Life without risk is always a regret. We human's love to play on the safe side, but we forget life is too short to not take the risk. We choose not to take the risk because we are scared to fall and we know it might be hard to rise again."],
+["Don’ you worry, Harry. You’ll learn fast enough. Everyone starts at the beginning at Hogwarts, you’ll be just fine. Just be yerself","Hagrid","the quote is a message of encouragement from a character in the Harry Potter series to Harry, telling him not to worry and that he will learn and fit in at his new school, Hogwarts. The character also reminds Harry to just be himself."],
+["What’s comin’ will come, an’ we’ll meet it when it does","Hagrid","You can’t predict the future and there is no point spoiling your present by thinking about the unpredictable future events which may or may not happen"],
+["You can laugh, but people used to believe there were no such things as the Blibbering Humdinger or the Crumple-Horned Snorkack! ","Luna Lovegood","It is a reference to the magical creatures in the Harry Potter universe. It suggests that just because people previously thought certain things were not real, it does not mean they are not true or that they cannot be discovered in the future."],
+["You sort of start thinking anything’s possible if you’ve got enough nerve","Ginny Weasley","this quote suggests that having courage and boldness can make one believe that they can accomplish anything they set their mind to. It implies that having confidence in oneself and taking risks can lead to great possibilities and success."]
+
+];
+      
+          var randomQuote = 0;
+          if ((num === undefined)||(num >= quotes.length)) {
+            randomQuote = Math.floor(Math.random() * quotes.length);
+          } else {
+            randomQuote = num;
+          }
+          var selectedQuote = quotes[randomQuote];
+          console.log(selectedQuote);
+          $("#quote").text('"' + selectedQuote[0] + '"');
+          $("#quote").attr("quotenum", randomQuote);
+          $("#author").text("-" + selectedQuote[1]);
+          $("#mean").text("-" + selectedQuote[2]);
+        }
+      
+        $("#generate").click(function() {
+          generateQuote();
+        });
+      
+      
+        function getCurrentTweet() {
+          var params = window.location.search;
+          var reg = /[\?|&]quote=(\d+)/
+          var quoteNum = reg.exec(params);
+          if (quoteNum === null) {
+            generateQuote();
+          } else {
+            generateQuote(quoteNum[1]);
+          }
+          console.log(quoteNum);
+        }
+      });
+      </script>
+
+<script>
+  function closebox(){
+    document.getElementById("meann").style.display = "none";
+    document.getElementById("blureff").style.display = "none";
+
+  }
+  function openbox(){
+    document.getElementById("meann").style.display = "unset";
+    document.getElementById("blureff").style.display = "unset";
+  
+  }
+
+</script>
+
+<script>
+  $(window).on("load",function(){
+    $(".loader-wrapper").fadeOut("slow");
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
+    </script>
+    <title>HP</title> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <script src="javascript.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+
+
+
+</head>
+<body bgcolor="#1c2331">
+
+
+
+<div id="popup">
+    <h1 class="secret">Enter the code to see the magic</h1>
+    <input type="text" id="input" placeholder=""><br>
+    <button id="submit">Submit</button>
+
+    <button id="open-modal">Hint🙃</button>
+  
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p id="modal-text">veno?😁</p>
+        <div class="spacefor">
+        <button id="yes-btn" class="sizebutt">Yes</button>
+        <button id="no-btn" class="sizebutt">No</button>
+      </div>
+      </div>
+    </div>
+    
+</div>
+
+<script>
+  const openModalBtn = document.querySelector("#open-modal");
+  const modal = document.querySelector("#modal");
+  const modalText = document.querySelector("#modal-text");
+  const yesBtn = document.querySelector("#yes-btn");
+  const noBtn = document.querySelector("#no-btn");
+
+  let counter = 1;
+
+  openModalBtn.addEventListener("click", function() {
+    modal.style.display = "block";
+  });
+
+  noBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  yesBtn.addEventListener("click", function() {
+    switch (counter) {
+      case 1:
+        modalText.innerHTML = "sherikkum veno?🙃";
+        counter++;
+        break;
+      case 2:
+        modalText.innerHTML = "Nnalum?🙃";
+        counter++;
+        break;
+      case 3:
+        modalText.innerHTML = "hint is:<br>\"ennod para...🙃\" ";
+        yesBtn.style.display = "none";
+        noBtn.innerHTML = "Close";
+        break;
+      default:
+        break;
+    }
+  });
+</script>
+
+<div class="parallax" id="llax">
+  <div id="colback">
+<!-- random try -->
+
+
+
+    <div class="heart2">
+
+      
+      <div id="containert">
+        <button id="toggleBtn"><img src="images/56763.png" alt="" class="wandd"></button>
+        <button id="closing"></button>
+        <div id="slideout">
+          <button id="closeBtn" class="button22">Close</button>
+          <h1 class="slidetitle">Try different themes</h1>
+          <button id="redBtn" class="button22">Morning</button>
+          <button id="greenBtn" class="button22">Afternoon</button>
+          <button id="blueBtn" class="button22">Evening</button>
+          <button id="yellowBtn" class="button22">Night</button>
+          <button onclick="generate()" class="btn button22" id="gen-btn">Random🪄
+          </button>
+          <button id="autotime" class="button22">Automatic</button>
+          <h1 class="slidetitle">Special😉</h1>
+          <button id="chocolate" class="button22">Chocolate</button>
+          <a href="quote2.html" id="linkbut"><button id="quotebox" class="button22">Quote book</button></a>
+          <p class="slidetitle" id="madewith">Made with ❤️ by Sonu</p>
+        </div>
+      </div>
+    
+        <i class="fa fa-heart" id="heartstyle2"></i>
+
+
+
+    </div>
+    <div class="heart" id="heartt">
+        <i class="fa fa-heart" id="heartstyle"></i>
+    </div>
+    <div class="snitch">
+        <img src="images/flyingball.png" alt="" class="ball">
+        <img src="images/flyingharry.png" alt="" class="harryboy">
+    </div>
+    <div class="fogg">
+        <img src="images/fog.png" alt="none" class="fogimage">
+        <img src="images/fog.png" alt="none" class="fogimage2">
+    </div>
+    <div class="container">
+        <div class='clouds'>
+            <div class='clouds-1'></div>
+            <div class='clouds-2'></div>
+            <div class='clouds-3'></div>
+              </div>
+        </div>
+<div class="black">
+    <p>keep <br> scrolling <br> slowly</p>
+    <div class="scroll-down">
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+</div>
+<div class="images">
+<img src="/images/castle1.png" class="castle" id="m1">
+</div>
+<div class="adjust"><h1 class="adj"><span id="text12">GOOD</span> &#8239; </h1><h1 class="adj"><span id="wishh">NIGHT</span></h1></div>
+<div class="adjust2">
+    <!-- <div class='container3' id="helll"> -->
+        <div class='letter' id='letter1'>A</div>
+        <div class='letter' id='letter2'>n</div>
+        <div class='letter' id='letter3'>j</div>
+        <div class='letter' id='letter4'>u</div>
+        <div class='letter' id='letter5'>u</div>
+        <div class='letter' id='letter6'>!</div>
+      <!-- </div> -->
+</div>
+<!-- <div class="containerr">
+    <img class="fog" src="https://64.media.tumblr.com/224f9198d5d88a5e92e43f5ef4f7a592/139ff9bb70edd708-66/s540x810/0edbf6d586b6b4c85c5bd61569992f036c21191b.png" alt="fog1.png">
+</div> -->
+
+<div class="stars">
+    <div class="main"></div>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="loader-wrapper">
+  <div class="funtxt">Onn wait cheyy... load aavann <span style="font-style:normal;">😁</span></div>
+  <span class="loader"><span class="loader-inner"></span></span>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"
+integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+<script>
+// Get the input field
+var inputt = document.getElementById("input");
+
+// Execute a function when the user presses a key on the keyboard
+inputt.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("submit").click();
+  }
+});
+</script>
+
+
+
+<script>
+    const box = document.querySelector("#heartstyle2");
+    const heart = document.querySelector("#heartstyle");
+    const parallax = document.querySelector("#llax");
+    const heartdiv = document.querySelector("#heartt");
+    const popup = document.querySelector("#popup");
+    const input = document.querySelector("#input");
+    const submit = document.querySelector("#submit");
+
+    let clickCount = 0;
+
+    box.addEventListener("click", () => {
+      clickCount++;
+
+      if (clickCount === 3) {
+        popup.style.display = "block";
+        parallax.style.display = "none";
+
+      }
+    });
+
+    submit.addEventListener("click", () => {
+        
+      if (input.value.toLowerCase() === "i love you" || input.value.toLowerCase() === "i love you " || input.value.toLowerCase() === "i love you sonu"  || input.value.toLowerCase() === "i love you aman" ) {
+        popup.style.display = "none";
+        parallax.style.display = "block";
+        // popup.style.top = "5000%";
+        heart.style.cssText = `
+                                color:red; 
+                                `;
+        heartdiv.style.cssText = `
+                                animation-name:beat;
+                                animation-duration:0.25s;
+                                animation-iteration-count:infinite;
+                                animation-direction:alternate;
+                                z-index:+12; 
+                                `;
+        document.getElementById("text12").innerHTML = "LOVE";
+        document.getElementById("wishh").innerHTML = "You Too";
+      }
+      else if(input.value.toLowerCase() === "i love you bestie " || input.value.toLowerCase() === "i love you bestie"){
+        input.value = "";
+        input.placeholder = "try again :) you are close";
+        input.style.cssText = `
+                                animation: shakee 0.2s ease-in-out 0s 2; 
+                                `;
+        setTimeout(() => {
+          input.style.cssText = `
+                                animation:none; 
+                                `;
+          }, 300);
+      }
+      else{
+        input.value = "";
+        input.placeholder = "try again :)";
+        input.style.cssText = `
+                                animation: shakee 0.2s ease-in-out 0s 2; 
+                                `;
+        setTimeout(() => {
+          input.style.cssText = `
+                                animation:none; 
+                                `;
+          }, 300);
+      }
+    });
+  </script>
+
+<script>
+    const hour = new Date().getHours();
+    const background = document.getElementById("colback");
+    const greeting = document.getElementById("wishh");
+  function autotime(){
+    if (hour >= 3 && hour < 12) {
+      document.getElementById("text12").innerHTML="GOOD";
+      greeting.innerHTML = "Morning";
+      background.style.cssText = `
+      background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 41%, rgba(0, 10, 53, 1) 61%);
+                                `;
+    } else if (hour >= 12 && hour < 16) {
+      document.getElementById("text12").innerHTML="GOOD";
+      greeting.innerHTML = "Afternoon";
+      background.style.cssText = `
+      background:radial-gradient(circle at 100% 0%, rgba(255, 209, 92, 1) 7%, rgba(255, 237, 131, 1) 10%, rgba(231, 255, 131, 1) 25%, rgba(68, 139, 163, 1) 63%, rgba(66, 121, 255, 1) 100%);
+                                `;
+    } else if (hour >= 16 && hour < 20) {
+      document.getElementById("text12").innerHTML="GOOD";
+      greeting.innerHTML = "Evening";
+      background.style.cssText = `
+      background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 56%, rgba(0, 0, 0, 1) 100%);
+                                `;
+    } else {
+      document.getElementById("text12").innerHTML="GOOD";
+      greeting.innerHTML = "Night";
+      background.style.cssText = `
+      background:none;
+                                `;
+    }
+  }
+
+  autotime();
+  </script>
+
+<script>
+  const background2 = document.getElementById("colback");
+  const toggleBtn = document.getElementById("toggleBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const redBtn = document.getElementById("redBtn");
+  const greenBtn = document.getElementById("greenBtn");
+  const blueBtn = document.getElementById("blueBtn");
+  const yellowBtn = document.getElementById("yellowBtn");
+  const chocolate = document.getElementById("chocolate");
+  const container = document.getElementById("container");
+  const slideout = document.getElementById("slideout");
+  const closing = document.getElementById("closing");
+  const timefun = document.getElementById("autotime");
+  const clickprev = document.getElementById("heartstyle2");    
+
+  toggleBtn.addEventListener("click", function() {
+    slideout.classList.toggle("open");
+    closing.style.display="block";
+    clickprev.style.display="none";
+  });
+
+  closeBtn.addEventListener("click", function() {
+    slideout.classList.remove("open");
+    closing.style.display="none";
+    clickprev.style.display="block";
+  });
+
+  closing.addEventListener("click", function() {
+    slideout.classList.remove("open");
+    closing.style.display="none";
+    clickprev.style.display="block";
+  });
+  
+
+  redBtn.addEventListener("click", function() {
+    background2.style.cssText = `
+      background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 41%, rgba(0, 10, 53, 1) 61%);
+                                `;
+    redBtn.style.background="red";
+    greenBtn.style.background="white";
+    blueBtn.style.background="white";
+    yellowBtn.style.background="white";
+    chocolate.style.background="white";
+    timefun.style.background="white";
+    document.getElementById("gen-btn").style.background = "white";
+  });
+
+  greenBtn.addEventListener("click", function() {
+    background2.style.cssText = `
+      background:radial-gradient(circle at 100% 0%, rgba(255, 209, 92, 1) 7%, rgba(255, 237, 131, 1) 10%, rgba(231, 255, 131, 1) 25%, rgba(68, 139, 163, 1) 63%, rgba(66, 121, 255, 1) 100%);
+                                `;
+    redBtn.style.background="white";
+    greenBtn.style.background="red";
+    blueBtn.style.background="white";
+    yellowBtn.style.background="white";
+    chocolate.style.background="white";
+    timefun.style.background="white";
+    document.getElementById("gen-btn").style.background = "white";
+  });
+
+  blueBtn.addEventListener("click", function() {
+      background2.style.cssText = `
+      background:radial-gradient(circle at 50% 100%, rgba(255, 224, 153, 1) 11%, rgba(255, 183, 0, 1) 23%, rgba(130, 1, 36, 1) 56%, rgba(0, 0, 0, 1) 100%);
+                                `;
+    redBtn.style.background="white";
+    greenBtn.style.background="white";
+    blueBtn.style.background="red";
+    yellowBtn.style.background="white";
+    chocolate.style.background="white";
+    timefun.style.background="white";
+    document.getElementById("gen-btn").style.background = "white";
+  });
+
+  yellowBtn.addEventListener("click", function() {
+    background2.style.cssText = `
+      background:none;
+                                `;
+    redBtn.style.background="white";
+    greenBtn.style.background="white";
+    blueBtn.style.background="white";
+    yellowBtn.style.background="red";
+    chocolate.style.background="white";
+    timefun.style.background="white";
+    document.getElementById("gen-btn").style.background = "white";
+  });
+
+  chocolate.addEventListener("click", function() {
+    background2.style.cssText = `
+    background-image: url("images/chocolate3.webp");
+    background-position: center;
+                                `;
+    redBtn.style.background="white";
+    greenBtn.style.background="white";
+    blueBtn.style.background="white";
+    yellowBtn.style.background="white";
+    chocolate.style.background="linear-gradient(90deg, rgba(107,56,1,1) 17%, rgba(214,125,0,1) 46%, rgba(105,63,0,1) 88%)";
+    timefun.style.background="white";
+    document.getElementById("gen-btn").style.background = "white";
+  });
+
+  timefun.addEventListener("click", function() {
+    autotime();
+    redBtn.style.background="white";
+    greenBtn.style.background="white";
+    blueBtn.style.background="white";
+    yellowBtn.style.background="white";
+    chocolate.style.background="white";
+    timefun.style.background="#7CFC00";
+    document.getElementById("gen-btn").style.background = "white";
+  });
+</script>
+
+
+<!-- randomiser -->
+<script>
+function createHex() {
+  var hexCode1 = "";
+  var hexValues1 = "0123456789abcdef";
+  
+  for ( var i = 0; i < 6; i++ ) {
+    hexCode1 += hexValues1.charAt(Math.floor(Math.random() * hexValues1.length));
+  }
+  return hexCode1;
+}
+
+function generate() {
+  
+  var deg = Math.floor(Math.random() *360);
+  
+  var gradientt = "linear-gradient(" + deg + "deg, " + "#" + createHex() + ", " + "#" + createHex() +")";
+  
+  document.getElementById("colback").style.background = gradientt;
+  document.getElementById("gen-btn").style.background = gradientt;
+  document.getElementById("redBtn").style.background = "white";
+  document.getElementById("greenBtn").style.background = "white";
+  document.getElementById("blueBtn").style.background = "white";
+  document.getElementById("yellowBtn").style.background = "white";
+  document.getElementById("chocolate").style.background = "white";
+  document.getElementById("autotime").style.background = "white";
+  
+  console.log(hexCode1, hexCode2);
+ 
+}
+
+
+</script>
+
+
+
+<script>
+  $(window).on("load",function(){
+    $(".loader-wrapper").fadeOut("slow");
+  });
+</script>
+
+
+<script src="javascript.js"></script>   
+</body>
+</html>
